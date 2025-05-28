@@ -176,6 +176,18 @@ function modifyTask(taskId) {
     }
 }
 
+function clearCompletedTasks() {
+    const completedCount = taskDatabase.filter(task => task.status === 'done').length;
+    if (completedCount === 0) {
+        alert('No completed tasks to clear!');
+        return;
+    }
+    
+    if (confirm(`Are you sure you want to clear all ${completedCount} completed tasks?`)) {
+        taskDatabase = taskDatabase.filter(task => task.status !== 'done');
+        displayTasks();
+    }
+}
 
 document.getElementById('newTaskTitle').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
