@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Simple Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        <nav class="nav-bar">
+            <div class="brand-section">
+                <h1>TaskFlow</h1>
+                <p>Simple Task Management</p>
+            </div>
+            <div class="stats-display">
+                <div class="stats-number" id="progressIndicator">1/4</div>
+                <div class="stats-label">Completed</div>
+            </div>
+        </nav>
+
+        <section class="task-creator">
+            <div class="form-row">
+                <input type="text" class="task-input" id="newTaskTitle" placeholder="What needs to be done?">
+                <button class="submit-button" onclick="createTask()">Add Task</button>
+            </div>
+            <textarea class="description-field" id="newTaskDescription" placeholder="Add some details..."></textarea>
+        </section>
+
+        <div class="action-bar">
+            <button class="clear-button" onclick="clearCompletedTasks()">Clear Completed</button>
+        </div>
+
+        <main class="board-layout">
+            <section class="status-column">
+                <header class="column-header">
+                    <div class="column-name">To Do</div>
+                    <div class="item-counter" id="todoCounter">2</div>
+                </header>
+                <div id="todoList" class="task-container">
+                </div>
+            </section>
+
+            <section class="status-column">
+                <header class="column-header">
+                    <div class="column-name">In Progress</div>
+                    <div class="item-counter" id="progressCounter">1</div>
+                </header>
+                <div id="progressList" class="task-container">
+                </div>
+            </section>
+
+            <section class="status-column">
+                <header class="column-header">
+                    <div class="column-name">Complete</div>
+                    <div class="item-counter" id="completeCounter">1</div>
+                </header>
+                <div id="completeList" class="task-container">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
